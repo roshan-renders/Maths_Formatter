@@ -24,21 +24,39 @@
         p{
             text-align: right;
         }
+        button{
+            font-size: 3vw;
+            background-color: dodgerblue;
+            border: none;padding: 2vw;
+            color: #ebecf5;
+            letter-spacing: normal;
+            margin-left: 20vw;
+        }
+        .symbol{
+            float: left;
+            width: 5vw;
+            position: absolute;
+            transform: translate(-100%, -100%);
+            background: none;
+            border: none;
+        }
     </style>
 </head>
 <body>
     <span>
     <div id="sum">
-        <p contenteditable="true">2347</p>
-        <p contenteditable="true">234</p>
+        
+        <p contenteditable="true">7</p>
+        <p contenteditable="true">4</p>
         <p contenteditable="true" style="float: right !important;">934</p>
         <br>
+
     </div>
-    <span contenteditable="true" style="text-align: left;position: absolute;transform: translate(0, -100%);">&times;</span>
-    <span style="position: absolute;transform: translate(0, -100%);">&thinsp;</span>
-    <hr style="height: 11.8656px;background-color: #222;">  
+    <input class="symbol" contenteditable="true" value="&times;" maxlength="1">
+
+    <hr style="height: 11.8656px;background-color: #222;min-width: 20vw;">  
     </span>
-    <button onclick="addline()" style="font-size: 3vw;background-color: dodgerblue;border: none;padding: 2vw;color: #ebecf5;letter-spacing: normal;margin-left: 20vw;">Add Line</button>
+    <button onclick="addline()">Add Line</button>
 <script>
     function addline(){
         const newNode = document.createElement("p");
