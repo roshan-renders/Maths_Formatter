@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+        *{
+            margin: 0;
+            font-family: 'Lexend', sans-serif;
+            color: #222;
+            font-size: 120px;
+            letter-spacing: 0.5vw;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        p{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <span>
+    <div id="sum">
+        <p contenteditable="true">2347</p>
+        <p contenteditable="true">234</p>
+        <p contenteditable="true" style="float: right !important;">934</p>
+        <br>
+    </div>
+    <span contenteditable="true" style="text-align: left;position: absolute;transform: translate(0, -100%);">&times;</span>
+    <span style="position: absolute;transform: translate(0, -100%);">&thinsp;</span>
+    <hr style="height: 11.8656px;background-color: #222;">  
+    </span>
+    <button onclick="addline()" style="font-size: 3vw;background-color: dodgerblue;border: none;padding: 2vw;color: #ebecf5;letter-spacing: normal;margin-left: 20vw;">Add Line</button>
+<script>
+    function addline(){
+        const newNode = document.createElement("p");
+        const textNode = document.createTextNode("0");
+        newNode.contentEditable = "true";
+        newNode.appendChild(textNode);
+
+        const list = document.getElementById("sum");
+        list.insertBefore(newNode, list.children[-1]);
+    }
+</script>    
+</body>
+</html>
