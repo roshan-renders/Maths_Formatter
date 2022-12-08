@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+        *{
+            margin: 0;
+            font-family: 'Lexend', sans-serif;
+            color: #222;
+            font-size: 120px;
+            letter-spacing: 0.5vw;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        p{
+            text-align: right;
+        }
+        button{
+            font-size: 3vw;
+            background-color: dodgerblue;
+            border: none;padding: 2vw;
+            color: #ebecf5;
+            letter-spacing: normal;
+            margin-left: 10vw;
+        }
+        .symbol{
+            max-width: 5vw !important;
+            float: left;
+            position: relative;
+            background: none;
+            border: none;
+            transform: translateY(-100%);
+            right: -20%;
+        }
+        #container{
+            display: grid;
+            grid-template-areas: "calc settings";
+        }
+        #calculation{
+            grid-area: calc;
+        }
+        #Settings{
+            grid-area: settings;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #sum p{
+           display: block;
+           float: right;
+           width: fit-content !important;
+        }
+    </style>
+</head>
+<body>
+    <span id="container">
+        <span id="calculation">
+            <div id="sum" style="height:fit-content;">
+
+                <p contenteditable="true">7</p>
+                <br>
+                <p contenteditable="true">8</p>
+                <br>
+
+            </div>
+            <input class="symbol" contenteditable="true" value="&times;" maxlength="1">
+
+            <hr style="height: 11.8656px;background-color: #222;min-width: 20vw;">  
+        </span>
+        <span id="Settings">
+            <button onclick="addline()">Add Line</button>
+        </span>
+    </span>
+<script>
+    function addline(){
+        let sum = document.getElementById("sum");
+        let newline = document.createElement("p");
+        newline.textContent = "0";
+        newline.contentEditable = "true";
+
+        sum.insertBefore(newline, sum.children[-1]);
+
+        let newbr = document.createElement("br");
+        sum.insertBefore(newbr, sum.children[-1]);
+    }
+</script>    
+</body>
+</html>
